@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal 18th Debut Invitation</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 *{
@@ -16,31 +15,79 @@
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background: radial-gradient(circle at top, #8b0000, #4b0000 60%, #2a0000);
+    font-family:'Montserrat',sans-serif;
+    background: radial-gradient(circle at top, #7b0000, #3b0000 70%);
     color:#fff;
     overflow-x:hidden;
 }
 
-/* Floating Gold Sparkles */
-body::before{
-    content:"";
+/* ================= CURTAIN INTRO ================= */
+
+#curtain-wrapper{
     position:fixed;
-    width:200%;
-    height:200%;
-    background-image: radial-gradient(#d4af37 1px, transparent 1px);
-    background-size:40px 40px;
-    opacity:0.08;
-    animation: sparkle 60s linear infinite;
-    z-index:-1;
+    width:100%;
+    height:100%;
+    z-index:9999;
+    display:flex;
+    overflow:hidden;
 }
 
-@keyframes sparkle{
-    from{transform:translate(0,0);}
-    to{transform:translate(-200px,-200px);}
+.curtain{
+    width:50%;
+    height:100%;
+    background:linear-gradient(to bottom,#8b0000,#5a0000);
+    position:relative;
+    transition:all 2s ease-in-out;
 }
 
-/* Hero Section */
+.curtain.left{
+    border-right:3px solid #d4af37;
+}
+
+.curtain.right{
+    border-left:3px solid #d4af37;
+}
+
+#curtain-content{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    z-index:10000;
+    color:#d4af37;
+    font-family:'Cinzel',serif;
+    text-align:center;
+}
+
+#curtain-content h1{
+    font-size:3rem;
+    letter-spacing:3px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px #d4af37; }
+    to{ text-shadow:0 0 30px #f8e08e; }
+}
+
+.open .left{
+    transform:translateX(-100%);
+}
+
+.open .right{
+    transform:translateX(100%);
+}
+
+.fade-out{
+    opacity:0;
+    transition:opacity 1.5s ease;
+}
+
+/* ================= MAIN CONTENT ================= */
+
 .hero{
     height:100vh;
     display:flex;
@@ -51,129 +98,65 @@ body::before{
 }
 
 .royal-card{
-    background:rgba(0,0,0,0.65);
+    background:rgba(0,0,0,0.6);
     border:2px solid #d4af37;
     border-radius:25px;
-    padding:70px 40px;
-    max-width:750px;
-    box-shadow:0 0 50px rgba(212,175,55,0.5);
-    animation: fadeIn 2s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(30px);}
-    to{opacity:1; transform:translateY(0);}
+    padding:60px 40px;
+    max-width:700px;
+    box-shadow:0 0 50px rgba(212,175,55,0.4);
 }
 
 .hero h1{
     font-family:'Cinzel',serif;
-    font-size:3.8rem;
+    font-size:3rem;
     color:#d4af37;
-    letter-spacing:3px;
 }
 
 .hero h2{
-    margin-top:20px;
+    margin-top:15px;
     font-weight:300;
-    font-size:1.2rem;
 }
 
-.hero button{
-    margin-top:35px;
-    padding:14px 45px;
-    border:none;
+button{
+    margin-top:30px;
+    padding:14px 40px;
     border-radius:50px;
-    background:linear-gradient(45deg,#d4af37,#f7e27c);
-    color:#4b0000;
+    border:none;
+    background:linear-gradient(45deg,#d4af37,#f8e08e);
+    color:#3b0000;
     font-weight:600;
     cursor:pointer;
-    transition:0.4s;
+    transition:0.3s;
 }
 
-.hero button:hover{
+button:hover{
     transform:scale(1.08);
-    box-shadow:0 0 20px #d4af37;
 }
 
-/* Sections */
 section{
-    padding:90px 20px;
+    padding:80px 20px;
     text-align:center;
 }
 
 section h2{
     font-family:'Cinzel',serif;
-    font-size:2.7rem;
-    margin-bottom:25px;
     color:#d4af37;
-}
-
-.details p{
-    margin:12px 0;
-    font-size:1.1rem;
-}
-
-/* Countdown */
-.countdown{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    margin-top:40px;
-    flex-wrap:wrap;
-}
-
-.count-box{
-    background:rgba(0,0,0,0.7);
-    border:1px solid #d4af37;
-    padding:25px;
-    border-radius:20px;
-    min-width:100px;
-}
-
-.count-box h3{
-    font-size:2rem;
-    color:#d4af37;
-}
-
-/* RSVP */
-form{
-    max-width:450px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-input,textarea{
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    outline:none;
-}
-
-.submit-btn{
-    background:linear-gradient(45deg,#d4af37,#f7e27c);
-    border:none;
-    padding:14px;
-    border-radius:50px;
-    font-weight:600;
-    color:#4b0000;
-    cursor:pointer;
+    margin-bottom:20px;
 }
 
 footer{
-    padding:25px;
+    padding:20px;
     background:rgba(0,0,0,0.6);
     text-align:center;
 }
 
 /* Responsive */
 @media(max-width:768px){
-    .hero h1{
-        font-size:2.5rem;
-    }
-    section h2{
+    #curtain-content h1{
         font-size:2rem;
+    }
+    .hero h1{
+        font-size:2.2rem;
     }
 }
 </style>
@@ -181,8 +164,71 @@ footer{
 
 <body>
 
-<!-- HERO -->
+<!-- ================= CURTAIN ================= -->
+
+<div id="curtain-wrapper">
+    <div class="curtain left"></div>
+    <div class="curtain right"></div>
+    <div id="curtain-content">
+        <h1>👑 A Royal Celebration Awaits 👑</h1>
+        <p>Opening the Grand Ball...</p>
+    </div>
+</div>
+
+<!-- ================= MAIN WEBSITE ================= -->
+
 <div class="hero">
     <div class="royal-card">
-        <h1>👑 Royal Invitation 👑</h1>
-        <h2>With grace and gratitude
+        <h1>Princess Your Name</h1>
+        <h2>Requests the honor of your presence</h2>
+        <h2>at her 18th Royal Birthday Ball</h2>
+        <button onclick="scrollToDetails()">View Royal Details</button>
+    </div>
+</div>
+
+<section>
+    <h2>✨ The Royal Debutante ✨</h2>
+    <p>Princess Your Full Name</p>
+    <p>Daughter of King & Queen (Parents' Names)</p>
+</section>
+
+<section>
+    <h2>🏰 Royal Ball Details</h2>
+    <p><strong>Date:</strong> December 25, 2026</p>
+    <p><strong>Time:</strong> 6:00 PM</p>
+    <p><strong>Venue:</strong> Grand Royal Ballroom</p>
+    <p><strong>Attire:</strong> Royal Red & Gold Formal</p>
+</section>
+
+<section>
+    <h2>💌 Confirm Your Presence</h2>
+    <button onclick="alert('Your royal attendance has been recorded 👑')">
+        Attend the Royal Ball
+    </button>
+</section>
+
+<footer>
+    © 2026 | Royal 18th Debut Celebration
+</footer>
+
+<script>
+// Curtain animation after 3 seconds
+window.addEventListener("load", function(){
+    setTimeout(function(){
+        document.getElementById("curtain-wrapper").classList.add("open");
+        setTimeout(function(){
+            document.getElementById("curtain-wrapper").classList.add("fade-out");
+        },2000);
+    },3000);
+});
+
+function scrollToDetails(){
+    window.scrollTo({
+        top:window.innerHeight,
+        behavior:"smooth"
+    });
+}
+</script>
+
+</body>
+</html>
