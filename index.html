@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>18th Debut Invitation</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 50px 30px;
+    max-width: 600px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero h2 {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.hero button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    background: #fff;
+    color: #a18cd1;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #a18cd1;
+    color: #fff;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Event Details */
+.details p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+/* RSVP Form */
+form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+button.submit-btn {
+    background: #fff;
+    color: #a18cd1;
+    border: none;
+    padding: 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.submit-btn:hover {
+    background: #a18cd1;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    background: rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="glass">
+        <h1>You're Invited</h1>
+        <h2>Join me as I celebrate my 18th Birthday</h2>
+        <button onclick="scrollToSection()">View Details</button>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+    <h2>✨ The Debutante ✨</h2>
+    <p><strong>Your Full Name</strong></p>
+    <p>Daughter of Your Parents' Names</p>
+</section>
+
+<!-- EVENT DETAILS -->
+<section class="details">
+    <h2>📅 Event Details</h2>
+    <p><strong>Date:</strong> Month Day, Year</p>
+    <p><strong>Time:</strong> 6:00 PM</p>
+    <p><strong>Venue:</strong> Venue Name</p>
+    <p><strong>Address:</strong> Full Address Here</p>
+    <p><strong>Attire:</strong> Formal / Color Motif</p>
+</section>
+
+<!-- RSVP -->
+<section>
+    <h2>💌 RSVP</h2>
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Message (Optional)"></textarea>
+        <button class="submit-btn" type="submit">Confirm Attendance</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 | 18th Birthday Celebration
+</footer>
+
+<script>
+function scrollToSection() {
+    window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+    });
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    alert("Thank you for your RSVP! 💖");
+}
+</script>
+
+</body>
+</html>
